@@ -19,6 +19,10 @@ func (p person) print() {
 	fmt.Printf("%+v\n", p)
 }
 
+func (p *person) updateName(newFirstName string) {
+	(*p).firstName = newFirstName
+}
+
 func main() {
 	alex := person{
 		firstName: "Alex",
@@ -28,5 +32,6 @@ func main() {
 			zipCode: 94010,
 		},
 	}
+	alex.updateName("Alexis")
 	alex.print()
 }
